@@ -1,0 +1,109 @@
+{
+  "appearance": {
+    "font": "regular",
+    "stroke": "crisp",
+    "seed": 1729
+  },
+  "sizes": {
+    "aside": {
+      "squareMm": 6.5,
+      "circleMm": 5
+    },
+    "body": {
+      "squareMm": 9,
+      "circleMm": 8
+    }
+  },
+  "split": {
+    "fonts": {
+      "mono": "IBM Plex Mono"
+    },
+    "categories": {
+      "fn": {
+        "fill": "#bd3e49",
+        "ink": "#98323c"
+      },
+      "int": {
+        "fill": "#3975af",
+        "ink": "#285f94"
+      },
+      "red": {
+        "fill": "#c94136",
+        "ink": "#222222"
+      },
+      "black": {
+        "fill": "#252525",
+        "ink": "#222222"
+      }
+    },
+    "empty": {
+      "top": "#252525",
+      "bottom": "#ffffff"
+    },
+    "strokes": {
+      "node": "#59534e",
+      "nodeWidth": 0.7,
+      "edge": "#78716a",
+      "edgeWidth": 1.3,
+      "arrow": "#333333",
+      "arrowWidth": 3,
+      "arrowHead": 8,
+      "phaseArrow": "#78716a",
+      "phaseArrowWidth": 1.3,
+      "phaseHead": 5,
+      "punctuation": "#222222",
+      "divider": "#ffffff",
+      "dividerWidth": 1
+    },
+    "categorical": [
+      {
+        "fill": "#d98188",
+        "ink": "#98323c"
+      },
+      {
+        "fill": "#efc34d",
+        "ink": "#946c00"
+      },
+      {
+        "fill": "#9673be",
+        "ink": "#71518f"
+      },
+      {
+        "fill": "#4e9d79",
+        "ink": "#286447"
+      },
+      {
+        "fill": "#e59b63",
+        "ink": "#91521e"
+      },
+      {
+        "fill": "#a06bab",
+        "ink": "#71518f"
+      },
+      {
+        "fill": "#326cab",
+        "ink": "#285f94"
+      },
+      {
+        "fill": "#f1c84e",
+        "ink": "#946c00"
+      },
+      {
+        "fill": "#75b695",
+        "ink": "#286447"
+      },
+      {
+        "fill": "#e49645",
+        "ink": "#91521e"
+      },
+      {
+        "fill": "#c86b9d",
+        "ink": "#71518f"
+      },
+      {
+        "fill": "#64b5cf",
+        "ink": "#285f94"
+      }
+    ]
+  }
+}

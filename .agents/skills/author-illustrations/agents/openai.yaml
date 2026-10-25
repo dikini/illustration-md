@@ -1,0 +1,4 @@
+interface:
+  display_name: "Author Illustrations"
+  short_description: "Turn prose problems into reviewed SVG illustrations"
+  default_prompt: "Use $author-illustrations to write an illustration brief and produce a reviewed, reproducible SVG."

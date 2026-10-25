@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Illustration-md"
+  short_description: "Keep saved-SVG preparation separate from authoring"
+  default_prompt: "Use $maintain-illustration-md to review this pipeline change and verify its preparation boundary."

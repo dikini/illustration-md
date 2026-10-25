@@ -1,0 +1,19 @@
+{
+  "name": "illustration-md",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs && python3 -m unittest discover -s tests -p 'test_*.py'",
+    "test:authoring": "node --test tests/authoring.integration.mjs",
+    "author": "node src/author.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "12.0.0",
+    "puppeteer": "25.10.0",
+    "roughjs": "4.6.6"
+  },
+  "overrides": { "mermaid": "12.1.0" }
+}
