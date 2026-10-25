@@ -44,6 +44,14 @@ a supported construction `kind`, saved resolved `appearance`, and dependency
 provenance. Captions/descriptions in source metadata remain authoritative for
 document substitution; authors must review their agreement with SVG metadata.
 
+## Saved comic strips
+
+The separate `.comic` fence with `kind: comic` uses page-local `comic.json`
+and an accepted PNG. Its [comic contract](comics.md) defines the raster subset,
+series catalogue and explicit authoring workflow. It shares stable IDs and
+Figure metadata, but does not relax the vector-only SVG boundary above.
+Preparation never reads series references or generates missing strips.
+
 ## Deterministic preparation
 
 `prepare_document` matches illustration descriptions by ID, not global order.

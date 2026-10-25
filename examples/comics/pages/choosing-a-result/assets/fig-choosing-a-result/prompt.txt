@@ -1,0 +1,16 @@
+Use case illustration-story. Make a new FOUR-PANEL educational comic in the Learn Ash book series. Use the attached character sheet as the primary identity reference for ALICE and BOT, and attached earlier coloured pencil wildcard comic for style and setting. EXACT same Alice: curly dark brown hair, round dark-rim glasses, teal knitted sweater, charcoal trousers. EXACT same ochre Bot: rounded rectangular head, black face screen, pale expressive eyes, single ball-tipped antenna, segmented arms and round joints. Bot antenna reaches Alice's lower chest when standing together. Maintain these designs and facial identity, no new cast. New poses and staging, not copying the old panels.
+Coloured pencil and graphite sketch on warm ivory textured paper, visible grain, light crosshatching, loose hand drawn borders and diagram arrows, restrained teal, ochre, muted leaf green. Outdoors under an ash tree, compound ash leaves and branches in background, a few drifting leaves; enough blank paper for readability. Beautiful narrative comic with expressions and gestures, sparse clear supporting diagrams. Exactly 2 by 2 grid, four panels reading left to right then down. Title "A question, then a choice". Subtitle "Learn Ash · Choosing a result". Alice and Bot address each other by name so identity is established.
+Panel 1: Alice sketches the expression "20 + 22 == 42" large on a notebook at an outdoor wooden table. Alice speech "Bot, does this make 42?" Bot speech "The equality makes a Bool, Alice." Curious expression.
+Panel 2: Closer view of rough pencil calculation cards, connected by clear sequential downward arrows:
+"20 + 22 == 42"
+"42 == 42"
+"true"
+Alice pleased speech "The question gives true." Bot points at true. Use no duplicate or alternative results.
+Panel 3: A large uncluttered notebook board shows EXACT code on four lines:
+match true {
+    true => 42
+    false => 0
+}
+A small pencil arrow points to the true arm, subtle teal underline, not obscuring code. Separate result card "42". Bot speech "Now match selects the true arm." Alice observing thoughtfully. Both arms visible and equally legible; no tree-like algorithm beyond these two alternatives.
+Panel 4: Alice changes her question, holding a card "20 + 22 == 41". Under it a small rough trace "false" then a rightward arrow to "0". Small supporting label "false arm". Alice speech "With 41, the question gives false." Bot speech "Then the false arm gives 0." Their expressions show discovery, bot friendly. Tiny closing caption "Ask a question. Match its answer."
+Semantics: equality yields Bool, match selects an arm and its Int result. Do not say Bool is 42, don't imply lazy choose arguments or skipped evaluation of function arguments. Exact code symbols == and => must be rendered correctly. Keep dialogue short, readable, clearly associated with speaker. All wording and code given are exact. No extra text, watermarks, added panels, other characters, modern glossy digital style, or decorative gibberish. Preserve character continuity as top priority.

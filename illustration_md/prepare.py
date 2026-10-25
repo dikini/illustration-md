@@ -9,6 +9,8 @@ import sys
 from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
 
+from .png import validate_png
+
 
 def validate_svg(data, source):
     """Accept the self-contained outlined SVG boundary used by the specimen."""
@@ -57,13 +59,15 @@ def validate_svg(data, source):
         raise ValueError(f"{source}: unsuitable SVG: {error}") from error
 
 
-def resolve_artwork(source, identifier):
+def resolve_artwork(source, identifier, kind="illustration"):
     """Resolve authored artwork only; never interpret prompts or run drawing code."""
+    if kind not in ("illustration", "comic"):
+        raise ValueError(f"unsupported artwork kind: {kind}")
     if not re.fullmatch(r"fig-[a-z0-9]+(?:-[a-z0-9]+)*", identifier):
         raise ValueError(f"{source}: illustration needs a stable fig- identifier")
     parent = Path(source).resolve().parent
     directory = parent / "assets" / identifier
-    sidecar = directory / "illustration.json"
+    sidecar = directory / f"{kind}.json"
     if not sidecar.resolve().is_relative_to(parent) or not sidecar.is_file():
         raise ValueError(f"{source}: missing or escaping illustration state: {identifier}")
     try:
@@ -72,17 +76,21 @@ def resolve_artwork(source, identifier):
         raise ValueError(f"{source}: invalid illustration state: {identifier}") from error
     if not isinstance(state, dict) or type(state.get("version")) is not int or state["version"] != 1:
         raise ValueError(f"{source}: illustration {identifier} needs state version 1")
-    target = state.get("svg")
+    extension = "png" if kind == "comic" else "svg"
+    target = state.get(extension)
     if not isinstance(target, str):
-        raise ValueError(f"{source}: illustration {identifier} needs an SVG reference")
+        raise ValueError(f"{source}: illustration {identifier} needs a {extension.upper()} reference")
     url = urlsplit(target)
     path = Path(unquote(url.path))
     asset = (directory / path).resolve()
     if (not target or url.scheme or url.netloc or path.is_absolute() or url.query or url.fragment
             or not asset.is_relative_to(directory.resolve()) or not asset.is_relative_to(parent)
-            or not asset.is_file() or asset.suffix.lower() != ".svg"):
-        raise ValueError(f"{source}: illustration {identifier} needs an existing local SVG")
-    validate_svg(asset.read_bytes(), source)
+            or not asset.is_file() or asset.suffix.lower() != f".{extension}"):
+        raise ValueError(f"{source}: illustration {identifier} needs an existing local {extension.upper()}")
+    if kind == "comic":
+        validate_png(asset.read_bytes(), source)
+    else:
+        validate_svg(asset.read_bytes(), source)
     return asset.relative_to(parent).as_posix()
 
 
@@ -113,7 +121,7 @@ def prepare_document(document, source):
         if item.get("t") != "MetaMap":
             raise ValueError("each diagram description must be a map")
         fields = item["c"]
-        if literal(fields.get("kind", {})) != "illustration":
+        if literal(fields.get("kind", {})) not in ("illustration", "comic"):
             continue
         description = {key: literal(value) for key, value in fields.items()}
         if any(not description.get(key, "").strip() for key in ("id", "caption", "description")):
@@ -131,20 +139,27 @@ def prepare_document(document, source):
             return [replace(child) for child in node]
         if not isinstance(node, dict):
             return node
-        if node.get("t") == "CodeBlock" and "illustration" in node["c"][0][1]:
+        kinds = (set(node["c"][0][1]) & {"illustration", "comic"}
+                 if node.get("t") == "CodeBlock" else set())
+        if len(kinds) > 1:
+            raise ValueError("a fence cannot be both illustration and comic")
+        if kinds:
+            kind = kinds.pop()
             identifier = node["c"][0][0]
             if identifier in used:
                 raise ValueError(f"duplicate illustration fence: {identifier}")
             if identifier not in figures:
                 raise ValueError(f"illustration fence has no matching metadata: {identifier}")
             description = figures[identifier]
-            target = resolve_artwork(source, identifier)
+            if description["kind"] != kind:
+                raise ValueError(f"fence and metadata kind disagree: {identifier}")
+            target = resolve_artwork(source, identifier, kind)
             used.add(identifier)
             attributes = [["fig-alt", description["description"]]]
             if "width" in description:
                 attributes.append(["width", description["width"]])
             image = {"t": "Image", "c": [
-                ["", ["authored-illustration"], attributes],
+                ["", [f"authored-{kind}"], attributes],
                 [{"t": "Str", "c": description["description"]}], [target, ""]]}
             return {"t": "Figure", "c": [[identifier, [], []],
                 [None, [{"t": "Plain", "c": [{"t": "Str", "c": description["caption"]}]}]],

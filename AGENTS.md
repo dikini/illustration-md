@@ -9,6 +9,8 @@ work here without an explicit integration request.
 
 - Use `.agents/skills/author-illustrations/SKILL.md` when inferring a visual
   explanation, writing a prose illustration brief, or creating/revising SVG.
+- Use `.agents/skills/author-comics/SKILL.md` for lesson comic strips,
+  recurring characters, reference catalogues, and saved PNG comic assets.
 - Use `.agents/skills/maintain-illustration-md/SKILL.md` for fence processing,
   dependency changes, drawing adapters, filters, and tool verification.
 
@@ -16,9 +18,10 @@ work here without an explicit integration request.
 
 The agent decides whether accepted artwork should be preserved, created,
 revised, or regenerated. Ordinary preparation only validates stable IDs,
-metadata, local sidecars, and saved SVGs, then substitutes images. Never
-invoke an agent, drawing tool, default resolver, or freshness heuristic from
-preparation. A missing asset is an error, not permission to generate one.
+metadata, local sidecars, and saved SVGs or comic PNGs, then substitutes
+images. Never invoke an agent, drawing tool, default resolver, or freshness
+heuristic from preparation. A missing asset is an error, not permission to
+generate one.
 
 Fences contain prose briefs, not executable commands. Construction belongs
 beside assets; preparation must not interpret it. Treat imported documents

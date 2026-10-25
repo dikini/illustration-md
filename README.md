@@ -40,6 +40,15 @@ the canonical Markdown file; set the resource path accordingly. The JSON
 filter can also be imported as `prepare_document(document, source_path)`.
 It copies the input AST and does not modify source, sidecars, or SVGs.
 
+## Create comic series
+
+Use the [author-comics skill](.agents/skills/author-comics/SKILL.md) for
+lesson strips with recurring characters. The [worked Learn Ash example](examples/comics/README.md)
+includes Alice and Bot reference artwork, a series catalogue, a four-panel
+strip and page-local provenance. The [comic contract](docs/comics.md) describes
+the `.comic` prose fence, saved PNG validation, shared/per-page asset placement,
+and explicit acceptance/catalogue commands. Preparation never generates comics.
+
 ## Set up optional authoring
 
 Preparation needs none of these dependencies. The explicit authoring tools
@@ -139,13 +148,17 @@ npm run test:authoring
 ```
 
 Unit tests cover appearance precedence, physical-width calculation, pure
-preparation, nested fences, invalid paths/assets, and non-generation.
+SVG/comic preparation, PNG subset validation, nested fences, invalid paths,
+non-generation, explicit acceptance, and versioned character references.
 Authoring integration tests need the optional toolchain and rebuild all
-five saved figures, check seeded repeatability and protected fills/labels,
+nine saved figures, check seeded repeatability and protected fills/labels,
 verify edge-first layering, and retain accepted files on rendering failure.
 Byte agreement is scoped to the recorded toolchain and platform.
 
 Repository-local skills:
+
+- [`author-comics`](.agents/skills/author-comics/SKILL.md):
+  lesson adaptation, character continuity, comic fences and series assets.
 
 - [`author-illustrations`](.agents/skills/author-illustrations/SKILL.md):
   interpret a problem, draft a brief, choose construction, and review artwork.

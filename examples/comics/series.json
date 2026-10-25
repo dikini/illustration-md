@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "learn-ash",
+  "references": [
+    {
+      "id": "alice-bot-v1",
+      "path": "shared/characters/alice-bot-v1.png",
+      "role": "primary character identity"
+    },
+    {
+      "id": "pencil-pilot-v1",
+      "path": "shared/style/pencil-pilot-v1.png",
+      "role": "pencil style and ash-tree setting; character sheet wins on identity"
+    }
+  ],
+  "pages": ["pages/choosing-a-result/README.md"]
+}

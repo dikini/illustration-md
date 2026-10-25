@@ -1,0 +1,4 @@
+interface:
+  display_name: "Author Comics"
+  short_description: "Create lesson comics with recurring character continuity"
+  default_prompt: "Use $author-comics to adapt a lesson into a comic strip using the series character references and saved-artwork workflow."
