@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 765">
+<title>Office network: wired and wireless access</title>
+<desc>The Internet connects to an office firewall/router, then to a LAN switch. The switch connects to a Wi-Fi access point, wired PCs and a NAS. Wi-Fi laptops connect through the access point. Lines are bidirectional logical connections; no redundant uplink or guest-network isolation is shown.</desc>
+<rect id="office-boundary" x="35" y="155" width="890" height="500" fill="#f5f7fa" stroke="#8997a5" stroke-width="2"/>
+<text x="65" y="190" text-anchor="start" font-size="24">Office LAN</text>
+<path id="internet-uplink" d="M 480 120 V 215" fill="none" stroke="#30465d" stroke-width="2.5" stroke-linejoin="round"/>
+<path id="router-to-switch" d="M 480 285 V 335" fill="none" stroke="#30465d" stroke-width="2.5" stroke-linejoin="round"/>
+<path id="switch-to-ap" d="M 480 405 V 445 H 180 V 485" fill="none" stroke="#30465d" stroke-width="2.5" stroke-linejoin="round"/>
+<path id="switch-to-pcs" d="M 480 445 V 485" fill="none" stroke="#30465d" stroke-width="2.5" stroke-linejoin="round"/>
+<path id="switch-to-nas" d="M 480 445 H 780 V 485" fill="none" stroke="#30465d" stroke-width="2.5" stroke-linejoin="round"/>
+<path id="wireless-link" d="M 180 545 V 595" fill="none" stroke="#30465d" stroke-width="2.5" stroke-linejoin="round"/>
+<rect id="internet" x="390" y="50" width="180" height="70" fill="#ffffff" stroke="#30465d" stroke-width="2"/>
+<text x="480.0" y="92.0" text-anchor="middle" font-size="20">Internet</text>
+<rect id="firewall-router" x="380" y="215" width="200" height="70" fill="#fef3c7" stroke="#30465d" stroke-width="2"/>
+<text x="480.0" y="244.5" text-anchor="middle" font-size="20">Firewall /</text>
+<text x="480.0" y="269.5" text-anchor="middle" font-size="20">router</text>
+<rect id="lan-switch" x="390" y="335" width="180" height="70" fill="#dbeafe" stroke="#30465d" stroke-width="2"/>
+<text x="480.0" y="377.0" text-anchor="middle" font-size="20">LAN switch</text>
+<rect id="access-point" x="90" y="485" width="180" height="60" fill="#dbeafe" stroke="#30465d" stroke-width="2"/>
+<text x="180.0" y="522.0" text-anchor="middle" font-size="20">Wi-Fi AP</text>
+<rect id="workstations" x="390" y="485" width="180" height="60" fill="#dbeafe" stroke="#30465d" stroke-width="2"/>
+<text x="480.0" y="522.0" text-anchor="middle" font-size="20">Wired PCs</text>
+<rect id="storage" x="690" y="485" width="180" height="60" fill="#dbeafe" stroke="#30465d" stroke-width="2"/>
+<text x="780.0" y="522.0" text-anchor="middle" font-size="20">NAS</text>
+<rect id="wireless-clients" x="90" y="595" width="180" height="40" fill="#ffffff" stroke="#30465d" stroke-width="2"/>
+<text x="180.0" y="622.0" text-anchor="middle" font-size="20">Laptops</text>
+<text x="505" y="155" text-anchor="start" font-size="18">WAN</text>
+<text x="505" y="318" text-anchor="start" font-size="18">LAN</text>
+<text x="640" y="432" text-anchor="middle" font-size="18">Ethernet</text>
+<text x="205" y="578" text-anchor="start" font-size="18">Wi-Fi</text>
+<text x="35" y="700" text-anchor="start" font-size="22">Lines = bidirectional logical connections.</text>
+<text x="35" y="735" text-anchor="start" font-size="20">Single uplink; no guest VLAN or failover shown.</text>
+</svg>

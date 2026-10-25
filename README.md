@@ -86,6 +86,8 @@ back to a reader-installed font.
 | [Custom SVG](examples/custom/README.md) | Three signature positions | Exact boxes, rough contours, Excalifont |
 | [Tree repair](examples/tree/README.md) | Pieces survive rewiring | split-md scene, rough contours, protected fills |
 | [Sequence](examples/sequence/README.md) | Messages ordered in time | Mermaid, crisp strokes, outlined regular font |
+| [Network infrastructure](examples/network/README.md) | Public/private services and office connectivity | Custom SVG, crisp regular and rough handwritten appearances |
+| [BPMN 2.0](examples/bpmn/README.md) | Process events, exclusive decisions and participant messages | Custom SVG, crisp and selectively sketched contours |
 | [Swimlanes](examples/swimlanes/README.md) | Ownership, handoffs, decisions and retries | Custom SVG, crisp and rough strokes, outlined regular font |
 
 These are alternatives, not a renderer whitelist for all future artwork.

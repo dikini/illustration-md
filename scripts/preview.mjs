@@ -21,5 +21,13 @@ figcaption{margin-top:1rem}a{color:#57457e}</style>
 <figcaption>Swimlanes · crisp · <a href="../../examples/swimlanes/README.md">brief</a></figcaption></figure>
 <figure><img src="../../examples/swimlanes/assets/fig-support-escalation/figure.svg" style="width:170mm" alt="Support branches to Engineering and retries unresolved issues">
 <figcaption>Swimlanes · rough contours · protected regular lettering · <a href="../../examples/swimlanes/README.md">brief</a></figcaption></figure>
+<figure><img src="../../examples/network/assets/fig-web-service-network/figure.svg" style="width:170mm" alt="Clients connect through a public load balancer to two private applications and a shared database">
+<figcaption>Network infrastructure · crisp · regular lettering · <a href="../../examples/network/README.md">brief</a></figcaption></figure>
+<figure><img src="../../examples/network/assets/fig-office-network/figure.svg" style="width:170mm" alt="Office firewall and switch connect wired PCs, storage and Wi-Fi laptops through an access point">
+<figcaption>Network infrastructure · rough sketch · handwritten lettering · <a href="../../examples/network/README.md">brief</a></figcaption></figure>
+<figure><img src="../../examples/bpmn/assets/fig-bpmn-order/figure.svg" style="width:180mm" alt="Customer messages enter a Merchant process with Sales and Warehouse lanes and an exclusive stock decision">
+<figcaption>BPMN 2.0 · crisp order process · <a href="../../examples/bpmn/README.md">brief</a></figcaption></figure>
+<figure><img src="../../examples/bpmn/assets/fig-bpmn-support/figure.svg" style="width:180mm" alt="Support and Engineering handle alternative routes before merging and replying to Requester">
+<figcaption>BPMN 2.0 · sketch tasks and lanes · protected notation · <a href="../../examples/bpmn/README.md">brief</a></figcaption></figure>
 </html>\n`);
 console.log(new URL('index.html', output).href);

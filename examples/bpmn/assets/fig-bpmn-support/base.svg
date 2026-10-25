@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 685"><title>BPMN support escalation with an exclusive merge</title><desc>A Requester black-box pool sends an issue to a Service message start event. Support triages it. A Known fix exclusive gateway routes Yes directly to an exclusive merge, or No through Engineering investigation before merging. Support replies, sends a message to Requester and reaches a normal end event. No parallel split or retry is shown.</desc>
+<rect id="external-pool" data-sketch="true" x="20" y="30" width="1120" height="65" fill="#ffffff" stroke="#283d50" stroke-width="2"/>
+<text x="580" y="72" font-size="20" text-anchor="middle">Requester (black-box participant)</text>
+<rect id="process-pool" data-sketch="true" x="20" y="190" width="1120" height="380" fill="#ffffff" stroke="#283d50" stroke-width="2"/>
+<path id="pool-header" d="M 130 190 V 570" fill="none" stroke="#283d50" stroke-width="2" data-sketch="true"/>
+<path id="lane-header" d="M 240 190 V 570" fill="none" stroke="#283d50" stroke-width="2" data-sketch="true"/>
+<path id="lane-divider" d="M 130 380 H 1140" fill="none" stroke="#283d50" stroke-width="2" data-sketch="true"/>
+<text x="75" y="384" font-size="16" text-anchor="middle">Service</text>
+<text x="185" y="286" font-size="15" text-anchor="middle">Support</text>
+<text x="185" y="476" font-size="15" text-anchor="middle">Engineering</text>
+<path id="issue-message" d="M 280 99 V 260" fill="none" stroke="#283d50" stroke-width="2" stroke-dasharray="8 6"/><path id="issue-message-source" d="M 276 99 A 4 4 0 1 0 284 99 A 4 4 0 1 0 276 99" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:2"/><path id="issue-message-head" d="M 275 251 L 280 260 L 285 251" fill="none" stroke="#283d50" stroke-width="2"/>
+<text x="338" y="145" font-size="17" text-anchor="middle">Issue</text>
+<path id="reply-message" d="M 1000 241 V 145 H 1080 V 95" fill="none" stroke="#283d50" stroke-width="2" stroke-dasharray="8 6"/><path id="reply-message-source" d="M 996 241 A 4 4 0 1 0 1004 241 A 4 4 0 1 0 996 241" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:2"/><path id="reply-message-head" d="M 1075 104 L 1080 95 L 1085 104" fill="none" stroke="#283d50" stroke-width="2"/>
+<text x="930" y="130" font-size="17" text-anchor="middle">Reply</text>
+<path id="start-to-triage" d="M 300 280 H 350" fill="none" stroke="#283d50" stroke-width="2" /><path id="start-to-triage-head" d="M 341 275 L 350 280 L 341 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="triage-to-choice" d="M 490 280 H 550" fill="none" stroke="#283d50" stroke-width="2" /><path id="triage-to-choice-head" d="M 541 275 L 550 280 L 541 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="known-fix" d="M 610 280 H 820" fill="none" stroke="#283d50" stroke-width="2" /><path id="known-fix-head" d="M 811 275 L 820 280 L 811 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<text x="705" y="263" font-size="18" text-anchor="middle">Yes</text>
+<path id="needs-investigation" d="M 580 310 V 470 H 680" fill="none" stroke="#283d50" stroke-width="2" /><path id="needs-investigation-head" d="M 671 465 L 680 470 L 671 475 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<text x="607" y="350" font-size="18" text-anchor="middle">No</text>
+<path id="investigated" d="M 820 470 H 850 V 310" fill="none" stroke="#283d50" stroke-width="2" /><path id="investigated-head" d="M 845 319 L 850 310 L 855 319 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="merged" d="M 880 280 H 930" fill="none" stroke="#283d50" stroke-width="2" /><path id="merged-head" d="M 921 275 L 930 280 L 921 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="replied" d="M 1070 280 H 1087" fill="none" stroke="#283d50" stroke-width="2" /><path id="replied-head" d="M 1078 275 L 1087 280 L 1078 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="message-start" d="M 260 280 A 20 20 0 1 0 300 280 A 20 20 0 1 0 260 280" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:2"/><path id="message-envelope" d="M 269 273 H 291 V 287 H 269 Z M 269 273 L 280 281 L 291 273" fill="none" stroke="#283d50" stroke-width="2" /><text x="280" y="325" font-size="16" text-anchor="middle">Request</text>
+<path id="triage" data-sketch="true" d="M 362 245 H 478 Q 490 245 490 257 V 303 Q 490 315 478 315 H 362 Q 350 315 350 303 V 257 Q 350 245 362 245 Z" fill="#e7f0fa" stroke="#283d50" stroke-width="2"/><text x="420" y="287" font-size="20" text-anchor="middle">Triage issue</text>
+<path id="known-choice" d="M 550 280 L 580 250 L 610 280 L 580 310 Z" fill="none" stroke="#283d50" stroke-width="2" /><path id="known-choice-exclusive" d="M 570 270 L 590 290 M 590 270 L 570 290" fill="none" stroke="#283d50" stroke-width="2" />
+<text x="580" y="225" font-size="18" text-anchor="middle">Known fix?</text>
+<path id="investigate" data-sketch="true" d="M 692 435 H 808 Q 820 435 820 447 V 493 Q 820 505 808 505 H 692 Q 680 505 680 493 V 447 Q 680 435 692 435 Z" fill="#e7f0fa" stroke="#283d50" stroke-width="2"/><text x="750" y="477" font-size="20" text-anchor="middle">Investigate</text>
+<path id="exclusive-merge" d="M 820 280 L 850 250 L 880 280 L 850 310 Z" fill="none" stroke="#283d50" stroke-width="2" /><path id="exclusive-merge-exclusive" d="M 840 270 L 860 290 M 860 270 L 840 290" fill="none" stroke="#283d50" stroke-width="2" />
+<path id="reply" data-sketch="true" d="M 942 245 H 1058 Q 1070 245 1070 257 V 303 Q 1070 315 1058 315 H 942 Q 930 315 930 303 V 257 Q 930 245 942 245 Z" fill="#e7f0fa" stroke="#283d50" stroke-width="2"/><text x="1000" y="287" font-size="20" text-anchor="middle">Reply</text>
+<path id="reply-end" d="M 1087 280 A 18 18 0 1 0 1123 280 A 18 18 0 1 0 1087 280" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:4"/><text x="1105" y="322" font-size="16" text-anchor="middle">Replied</text>
+<text x="25" y="620" font-size="18" text-anchor="start">Solid + filled arrow = sequence flow inside a pool.</text>
+<text x="25" y="652" font-size="18" text-anchor="start">Dashed + open arrow = message flow between participants.</text>
+</svg>

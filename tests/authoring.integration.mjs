@@ -96,7 +96,9 @@ test('font coverage fails before a renderer can substitute a fallback glyph', ()
 
 test('all saved example SVGs reproduce from construction and keep their hashes', async () => {
   for (const [example, identifier] of [['custom', 'fig-add-inputs'], ['tree', 'fig-tree-repair'], ['sequence', 'fig-item-lookup'],
-    ['swimlanes', 'fig-order-handoffs'], ['swimlanes', 'fig-support-escalation']]) {
+    ['swimlanes', 'fig-order-handoffs'], ['swimlanes', 'fig-support-escalation'],
+    ['network', 'fig-web-service-network'], ['network', 'fig-office-network'],
+    ['bpmn', 'fig-bpmn-order'], ['bpmn', 'fig-bpmn-support']]) {
     const source = join(root, 'examples', example, 'assets', identifier);
     const copy = join(temporary, `${identifier} ' & path`);
     await cp(source, copy, { recursive: true });
@@ -139,4 +141,36 @@ test('explicit adoption reads document defaults and request overrides, then save
   const rebuilt = await rebuild(filename);
   assert.deepEqual(rebuilt.construction.appearance, state.construction.appearance);
   assert.deepEqual(await readFile(join(copy, 'figure.svg')), svg);
+});
+
+test('BPMN sketch preserves exact event, gateway, message and sequence symbols and rounded task fills', async () => {
+  const directory = new URL('examples/bpmn/assets/fig-bpmn-support/', ROOT);
+  const source = await readFile(new URL('base.svg', directory), 'utf8');
+  const sketch = await readFile(new URL('sketch.svg', directory), 'utf8');
+  const result = await runtime.page.evaluate(({ source, sketch }) => {
+    const parser = new DOMParser();
+    const exact = parser.parseFromString(source, 'image/svg+xml');
+    const output = parser.parseFromString(sketch, 'image/svg+xml');
+    const serialize = node => new XMLSerializer().serializeToString(node);
+    const protectedNodes = [...exact.querySelectorAll('[id]:not([data-sketch])')];
+    const protectedMatch = protectedNodes.every(node =>
+      serialize(node) === serialize(output.querySelector(`[id="${node.id}"]`)));
+    const fills = [...exact.querySelectorAll('path[data-sketch][fill]')]
+      .filter(node => node.getAttribute('fill') !== 'none');
+    const fillsMatch = fills.every(node => {
+      const saved = output.querySelector(`[id="${node.id}"]`);
+      return ['d', 'fill'].every(name => node.getAttribute(name) === saved.getAttribute(name))
+        && saved.getAttribute('stroke') === 'none';
+    });
+    const labels = document => [...document.querySelectorAll('text')].map(serialize);
+    return { protectedCount: protectedNodes.length, protectedMatch, taskFillCount: fills.length,
+      fillsMatch, labelsMatch: JSON.stringify(labels(exact)) === JSON.stringify(labels(output)),
+      sketchContours: output.querySelectorAll('g[data-sketch-role] > g').length };
+  }, { source, sketch });
+  assert.ok(result.protectedCount > 20);
+  assert.equal(result.protectedMatch, true);
+  assert.equal(result.taskFillCount, 3);
+  assert.equal(result.fillsMatch, true);
+  assert.equal(result.labelsMatch, true);
+  assert.ok(result.sketchContours >= 8);
 });

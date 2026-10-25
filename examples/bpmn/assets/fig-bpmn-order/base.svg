@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 685"><title>BPMN order fulfilment with a stock decision</title><desc>A Customer black-box pool sends an order to a Merchant message start event. Sales checks stock. An exclusive gateway sends unavailable orders to Decline order and an end event, or available orders across the Warehouse lane to Pack order, Ship order and a separate end event. Ship order sends a dispatch message to Customer.</desc>
+<rect id="external-pool" data-sketch="true" x="20" y="30" width="1120" height="65" fill="#ffffff" stroke="#283d50" stroke-width="2"/>
+<text x="580" y="72" font-size="20" text-anchor="middle">Customer (black-box participant)</text>
+<rect id="process-pool" data-sketch="true" x="20" y="190" width="1120" height="380" fill="#ffffff" stroke="#283d50" stroke-width="2"/>
+<path id="pool-header" d="M 130 190 V 570" fill="none" stroke="#283d50" stroke-width="2" data-sketch="true"/>
+<path id="lane-header" d="M 240 190 V 570" fill="none" stroke="#283d50" stroke-width="2" data-sketch="true"/>
+<path id="lane-divider" d="M 130 380 H 1140" fill="none" stroke="#283d50" stroke-width="2" data-sketch="true"/>
+<text x="75" y="384" font-size="16" text-anchor="middle">Merchant</text>
+<text x="185" y="286" font-size="15" text-anchor="middle">Sales</text>
+<text x="185" y="476" font-size="15" text-anchor="middle">Warehouse</text>
+<path id="order-message" d="M 280 99 V 260" fill="none" stroke="#283d50" stroke-width="2" stroke-dasharray="8 6"/><path id="order-message-source" d="M 276 99 A 4 4 0 1 0 284 99 A 4 4 0 1 0 276 99" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:2"/><path id="order-message-head" d="M 275 251 L 280 260 L 285 251" fill="none" stroke="#283d50" stroke-width="2"/>
+<text x="338" y="145" font-size="17" text-anchor="middle">Order</text>
+<path id="dispatch-message" d="M 960 431 V 145 H 1080 V 95" fill="none" stroke="#283d50" stroke-width="2" stroke-dasharray="8 6"/><path id="dispatch-message-source" d="M 956 431 A 4 4 0 1 0 964 431 A 4 4 0 1 0 956 431" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:2"/><path id="dispatch-message-head" d="M 1075 104 L 1080 95 L 1085 104" fill="none" stroke="#283d50" stroke-width="2"/>
+<text x="930" y="130" font-size="17" text-anchor="middle">Dispatch notice</text>
+<path id="start-to-check" d="M 300 280 H 350" fill="none" stroke="#283d50" stroke-width="2" /><path id="start-to-check-head" d="M 341 275 L 350 280 L 341 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="check-to-gateway" d="M 490 280 H 550" fill="none" stroke="#283d50" stroke-width="2" /><path id="check-to-gateway-head" d="M 541 275 L 550 280 L 541 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="out-of-stock" d="M 610 280 H 740" fill="none" stroke="#283d50" stroke-width="2" /><path id="out-of-stock-head" d="M 731 275 L 740 280 L 731 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<text x="660" y="263" font-size="18" text-anchor="middle">No</text>
+<path id="declined" d="M 880 280 H 1002" fill="none" stroke="#283d50" stroke-width="2" /><path id="declined-head" d="M 993 275 L 1002 280 L 993 285 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="in-stock" d="M 580 310 V 470 H 680" fill="none" stroke="#283d50" stroke-width="2" /><path id="in-stock-head" d="M 671 465 L 680 470 L 671 475 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<text x="607" y="350" font-size="18" text-anchor="middle">Yes</text>
+<path id="packed" d="M 820 470 H 890" fill="none" stroke="#283d50" stroke-width="2" /><path id="packed-head" d="M 881 465 L 890 470 L 881 475 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="shipped" d="M 1030 470 H 1062" fill="none" stroke="#283d50" stroke-width="2" /><path id="shipped-head" d="M 1053 465 L 1062 470 L 1053 475 Z" fill="#283d50" stroke="#283d50" stroke-width="2"/>
+<path id="message-start" d="M 260 280 A 20 20 0 1 0 300 280 A 20 20 0 1 0 260 280" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:2"/><path id="message-envelope" d="M 269 273 H 291 V 287 H 269 Z M 269 273 L 280 281 L 291 273" fill="none" stroke="#283d50" stroke-width="2" /><text x="280" y="325" font-size="16" text-anchor="middle">Request</text>
+<path id="check-stock" data-sketch="true" d="M 362 245 H 478 Q 490 245 490 257 V 303 Q 490 315 478 315 H 362 Q 350 315 350 303 V 257 Q 350 245 362 245 Z" fill="#e7f0fa" stroke="#283d50" stroke-width="2"/><text x="420" y="287" font-size="20" text-anchor="middle">Check stock</text>
+<path id="stock-choice" d="M 550 280 L 580 250 L 610 280 L 580 310 Z" fill="none" stroke="#283d50" stroke-width="2" /><path id="stock-choice-exclusive" d="M 570 270 L 590 290 M 590 270 L 570 290" fill="none" stroke="#283d50" stroke-width="2" />
+<text x="580" y="225" font-size="18" text-anchor="middle">In stock?</text>
+<path id="decline-order" data-sketch="true" d="M 752 245 H 868 Q 880 245 880 257 V 303 Q 880 315 868 315 H 752 Q 740 315 740 303 V 257 Q 740 245 752 245 Z" fill="#e7f0fa" stroke="#283d50" stroke-width="2"/><text x="810" y="274" font-size="20" text-anchor="middle">Decline</text><text x="810" y="298" font-size="20" text-anchor="middle">order</text>
+<path id="decline-end" d="M 1002 280 A 18 18 0 1 0 1038 280 A 18 18 0 1 0 1002 280" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:4"/><text x="1020" y="322" font-size="16" text-anchor="middle">Declined</text>
+<path id="pack-order" data-sketch="true" d="M 692 435 H 808 Q 820 435 820 447 V 493 Q 820 505 808 505 H 692 Q 680 505 680 493 V 447 Q 680 435 692 435 Z" fill="#e7f0fa" stroke="#283d50" stroke-width="2"/><text x="750" y="477" font-size="20" text-anchor="middle">Pack order</text>
+<path id="ship-order" data-sketch="true" d="M 902 435 H 1018 Q 1030 435 1030 447 V 493 Q 1030 505 1018 505 H 902 Q 890 505 890 493 V 447 Q 890 435 902 435 Z" fill="#e7f0fa" stroke="#283d50" stroke-width="2"/><text x="960" y="477" font-size="20" text-anchor="middle">Ship order</text>
+<path id="ship-end" d="M 1062 470 A 18 18 0 1 0 1098 470 A 18 18 0 1 0 1062 470" fill="none" stroke="#283d50" stroke-width="2" style="stroke-width:4"/><text x="1080" y="512" font-size="16" text-anchor="middle">Shipped</text>
+<text x="25" y="620" font-size="18" text-anchor="start">Solid + filled arrow = sequence flow inside a pool.</text>
+<text x="25" y="652" font-size="18" text-anchor="start">Dashed + open arrow = message flow between participants.</text>
+</svg>
