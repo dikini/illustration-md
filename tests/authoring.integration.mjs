@@ -95,7 +95,8 @@ test('font coverage fails before a renderer can substitute a fallback glyph', ()
 });
 
 test('all saved example SVGs reproduce from construction and keep their hashes', async () => {
-  for (const [example, identifier] of [['custom', 'fig-add-inputs'], ['tree', 'fig-tree-repair'], ['sequence', 'fig-item-lookup']]) {
+  for (const [example, identifier] of [['custom', 'fig-add-inputs'], ['tree', 'fig-tree-repair'], ['sequence', 'fig-item-lookup'],
+    ['swimlanes', 'fig-order-handoffs'], ['swimlanes', 'fig-support-escalation']]) {
     const source = join(root, 'examples', example, 'assets', identifier);
     const copy = join(temporary, `${identifier} ' & path`);
     await cp(source, copy, { recursive: true });

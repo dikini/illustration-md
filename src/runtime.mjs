@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 import puppeteer from 'puppeteer';
+import { assertBrowserVersion } from './browser-version.mjs';
 
 export const ROOT = new URL('../', import.meta.url);
 export const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -27,11 +28,11 @@ export async function createRuntime() {
       `Bundled font differs: ${filename}`);
   }
   const executablePath = process.env.ILLUSTRATION_BROWSER;
-  if (!executablePath) throw new Error('Set ILLUSTRATION_BROWSER to the pinned Chrome executable.');
+  if (!executablePath) throw new Error('Set ILLUSTRATION_BROWSER to a Chrome executable meeting the declared minimum.');
   const browser = await puppeteer.launch({ executablePath, headless: true,
     args: ['--no-sandbox', '--disable-dev-shm-usage', '--font-render-hinting=none'] });
   try {
-    assert.equal(await browser.version(), configuration.browser, 'Use the declared browser version.');
+    assertBrowserVersion(await browser.version(), configuration.minimumBrowser);
     const page = await browser.newPage();
     await page.setRequestInterception(true);
     page.on('request', request => /^(data:|about:|file:)/.test(request.url())

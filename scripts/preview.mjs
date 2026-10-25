@@ -17,5 +17,9 @@ figcaption{margin-top:1rem}a{color:#57457e}</style>
 <figcaption>split-md tree · rough strokes · protected fills · <a href="../../examples/tree/README.md">brief</a></figcaption></figure>
 <figure><img src="../../examples/sequence/assets/fig-item-lookup/figure.svg" width="700" alt="Caller, Service and Store exchange four messages">
 <figcaption>Mermaid sequence · crisp · outlined regular lettering · <a href="../../examples/sequence/README.md">brief</a></figcaption></figure>
+<figure><img src="../../examples/swimlanes/assets/fig-order-handoffs/figure.svg" style="width:170mm" alt="Customer, Sales and Warehouse hand off an order">
+<figcaption>Swimlanes · crisp · <a href="../../examples/swimlanes/README.md">brief</a></figcaption></figure>
+<figure><img src="../../examples/swimlanes/assets/fig-support-escalation/figure.svg" style="width:170mm" alt="Support branches to Engineering and retries unresolved issues">
+<figcaption>Swimlanes · rough contours · protected regular lettering · <a href="../../examples/swimlanes/README.md">brief</a></figcaption></figure>
 </html>\n`);
 console.log(new URL('index.html', output).href);

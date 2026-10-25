@@ -55,9 +55,11 @@ export ILLUSTRATION_PYTHON="$PWD/.venv/bin/python"
 export ILLUSTRATION_BROWSER=/absolute/path/to/chrome
 ```
 
-The browser must report `Chrome/152.0.7977.75`, as declared in `toolchain.json`.
-Use an existing matching executable or install it explicitly through the
-pinned Puppeteer tools:
+The browser must report `Chrome/152.0.7977.75` or newer, as declared by
+`minimumBrowser` in `toolchain.json`. Each authored sidecar records the exact
+browser used; byte agreement across different browser versions is not guaranteed.
+Use an existing compatible executable or install the minimum explicitly through
+the pinned Puppeteer tools:
 
 ```sh
 npx puppeteer browsers install chrome@152.0.7977.75
@@ -84,6 +86,7 @@ back to a reader-installed font.
 | [Custom SVG](examples/custom/README.md) | Three signature positions | Exact boxes, rough contours, Excalifont |
 | [Tree repair](examples/tree/README.md) | Pieces survive rewiring | split-md scene, rough contours, protected fills |
 | [Sequence](examples/sequence/README.md) | Messages ordered in time | Mermaid, crisp strokes, outlined regular font |
+| [Swimlanes](examples/swimlanes/README.md) | Ownership, handoffs, decisions and retries | Custom SVG, crisp and rough strokes, outlined regular font |
 
 These are alternatives, not a renderer whitelist for all future artwork.
 Each example separates the problem, inferred brief, saved construction,
@@ -136,7 +139,7 @@ npm run test:authoring
 Unit tests cover appearance precedence, physical-width calculation, pure
 preparation, nested fences, invalid paths/assets, and non-generation.
 Authoring integration tests need the optional toolchain and rebuild all
-three examples, check seeded repeatability and protected fills/labels,
+five saved figures, check seeded repeatability and protected fills/labels,
 verify edge-first layering, and retain accepted files on rendering failure.
 Byte agreement is scoped to the recorded toolchain and platform.
 

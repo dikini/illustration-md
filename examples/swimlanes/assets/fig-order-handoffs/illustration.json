@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "svg": "figure.svg",
+  "figure": {
+    "id": "fig-order-handoffs",
+    "caption": "Order fulfilment across three owners",
+    "description": "A customer submits an order, Sales accepts it, Warehouse packs and ships it, and the customer receives it. Arrows cross owner lanes; there are no decisions or parallel steps."
+  },
+  "construction": {
+    "kind": "custom-svg",
+    "source": "base.svg",
+    "roles": [
+      [
+        "rect",
+        "geometry-1"
+      ],
+      [
+        "path",
+        "geometry-2"
+      ],
+      [
+        "rect",
+        "geometry-3"
+      ],
+      [
+        "path",
+        "geometry-4"
+      ],
+      [
+        "rect",
+        "geometry-5"
+      ],
+      [
+        "path",
+        "geometry-6"
+      ],
+      [
+        "path",
+        "geometry-7"
+      ],
+      [
+        "path",
+        "geometry-8"
+      ],
+      [
+        "path",
+        "geometry-9"
+      ],
+      [
+        "rect",
+        "geometry-10"
+      ],
+      [
+        "rect",
+        "geometry-11"
+      ],
+      [
+        "rect",
+        "geometry-12"
+      ],
+      [
+        "rect",
+        "geometry-13"
+      ]
+    ],
+    "appearance": {
+      "stroke": "crisp",
+      "roughness": 0,
+      "bowing": 0,
+      "font": "regular",
+      "seed": 1729
+    }
+  },
+  "interpretation": {
+    "problem": "Order fulfilment across three owners",
+    "relationship": "A customer submits an order, Sales accepts it, Warehouse packs and ships it, and the customer receives it. Arrows cross owner lanes; there are no decisions or parallel steps.",
+    "filter": "Outline regular lettering; retain crisp geometry. No rough contour transformation requested."
+  },
+  "renderer": {
+    "command": "node src/author.mjs --state 'examples/swimlanes/assets/fig-order-handoffs/illustration.json'",
+    "argv": [
+      "node",
+      "src/author.mjs",
+      "--state",
+      "examples/swimlanes/assets/fig-order-handoffs/illustration.json"
+    ],
+    "dependencies": {
+      "sourceSha256": "36167ef0d09a64a720976bb5096afc040c8b3e6cfc590e3c287e80d45a04e023",
+      "browser": "Chrome/155.0.8059.79",
+      "roughjs": "4.6.6",
+      "roughBundleSha256": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194",
+      "packageLockSha256": "42e9f94f0bc05a182129df789f5dd9cb071805c86a9586dc40059511b4b83118",
+      "fonts": {
+        "Excalifont-Latin.woff2": "e4423b318e11432aff2e6e865e300b7ca270f92321a3f56632268fede01c1b48",
+        "IBMPlexMono-Regular.ttf": "a3c50f7c0e063998cfaeae56c6169ece9e0feaffaef425aa038f85d037fb4b9b"
+      }
+    }
+  },
+  "provenance": {
+    "svgSha256": "e8d7ee1d2f263921729d308b0914d8757c4fa8d570041f3225065bb4a2535dbc"
+  }
+}

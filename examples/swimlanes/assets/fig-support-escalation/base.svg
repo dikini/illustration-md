@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460"><title>Support escalation with a retry loop</title><desc>A requester reports a problem. Support triages it and decides whether a fix is known. Yes goes directly to Reply; No goes to Engineering to Investigate, then back to Reply. The requester verifies the fix and returns to Triage if unresolved; otherwise the process ends.</desc>
+<rect x="10" y="65" width="940" height="125" fill="#f1f5f9" stroke="#9aa5b1" stroke-width="1"/>
+<path d="M 140 65 V 190" fill="none" stroke="#9aa5b1"/>
+<text x="75" y="132" text-anchor="middle" font-size="16">Requester</text>
+<rect x="10" y="190" width="940" height="125" fill="#ffffff" stroke="#9aa5b1" stroke-width="1"/>
+<path d="M 140 190 V 315" fill="none" stroke="#9aa5b1"/>
+<text x="75" y="257" text-anchor="middle" font-size="16">Support</text>
+<rect x="10" y="315" width="940" height="125" fill="#f1f5f9" stroke="#9aa5b1" stroke-width="1"/>
+<path d="M 140 315 V 440" fill="none" stroke="#9aa5b1"/>
+<text x="75" y="382" text-anchor="middle" font-size="16">Engineering</text>
+<text x="150" y="24" font-size="14" text-anchor="start">Follow arrows; horizontal distance is not elapsed time.</text>
+<path d="M 310 115 H 335 V 240 H 350 M 342 236 L 350 240 L 342 244" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 500 240 H 515 M 507 236 L 515 240 L 507 244" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 635 240 H 770 M 762 236 L 770 240 L 762 244" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 575 275 V 340 M 571 332 L 575 340 L 579 332" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 650 365 H 925 V 240 H 920 M 928 236 L 920 240 L 928 244" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 845 215 V 140 M 841 148 L 845 140 L 849 148" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 770 115 H 740 V 48 H 425 V 215 M 421 207 L 425 215 L 429 207" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<rect x="160" y="90" width="150" height="50" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="235" y="120" text-anchor="middle" font-size="16">Report issue</text>
+<rect x="350" y="215" width="150" height="50" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="425" y="245" text-anchor="middle" font-size="16">Triage issue</text>
+<path d="M 515 240 L 575 205 L 635 240 L 575 275 Z" fill="#fef3c7" stroke="#253b53" stroke-width="2"/>
+<text x="540" y="237" font-size="14" text-anchor="start">Known</text>
+<text x="540" y="254" font-size="14" text-anchor="start">fix?</text>
+<text x="675" y="229" font-size="14" text-anchor="start">Yes</text>
+<text x="588" y="310" font-size="14" text-anchor="start">No</text>
+<rect x="500" y="340" width="150" height="50" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="575" y="370" text-anchor="middle" font-size="16">Investigate</text>
+<rect x="770" y="215" width="150" height="50" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="845" y="245" text-anchor="middle" font-size="16">Reply</text>
+<rect x="770" y="90" width="150" height="50" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="845" y="120" text-anchor="middle" font-size="16">Verify fix</text>
+<text x="490" y="42" font-size="14" text-anchor="start">If unresolved: triage again</text>
+<text x="650" y="165" font-size="14" text-anchor="start">Resolved: end</text>
+</svg>

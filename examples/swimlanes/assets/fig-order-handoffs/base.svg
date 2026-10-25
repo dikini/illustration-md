@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460"><title>Order fulfilment across three owners</title><desc>A customer submits an order, Sales accepts it, Warehouse packs and ships it, and the customer receives it. Arrows cross owner lanes; there are no decisions or parallel steps.</desc>
+<rect x="10" y="65" width="940" height="125" fill="#f1f5f9" stroke="#9aa5b1" stroke-width="1"/>
+<path d="M 140 65 V 190" fill="none" stroke="#9aa5b1"/>
+<text x="75" y="132" text-anchor="middle" font-size="16">Customer</text>
+<rect x="10" y="190" width="940" height="125" fill="#ffffff" stroke="#9aa5b1" stroke-width="1"/>
+<path d="M 140 190 V 315" fill="none" stroke="#9aa5b1"/>
+<text x="75" y="257" text-anchor="middle" font-size="16">Sales</text>
+<rect x="10" y="315" width="940" height="125" fill="#f1f5f9" stroke="#9aa5b1" stroke-width="1"/>
+<path d="M 140 315 V 440" fill="none" stroke="#9aa5b1"/>
+<text x="75" y="382" text-anchor="middle" font-size="16">Warehouse</text>
+<text x="150" y="24" font-size="14" text-anchor="start">Follow arrows; horizontal distance is not elapsed time.</text>
+<path d="M 310 115 H 335 V 240 H 365 M 357 236 L 365 240 L 357 244" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 515 240 H 535 V 365 H 560 M 552 361 L 560 365 L 552 369" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 710 365 H 845 V 140 M 841 148 L 845 140 L 849 148" fill="none" stroke="#253b53" stroke-width="2" stroke-linejoin="round"/>
+<rect x="160" y="90" width="150" height="50" rx="6" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="235" y="120" text-anchor="middle" font-size="16">Submit order</text>
+<rect x="365" y="215" width="150" height="50" rx="6" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="440" y="245" text-anchor="middle" font-size="16">Accept order</text>
+<rect x="560" y="340" width="150" height="50" rx="6" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="635" y="370" text-anchor="middle" font-size="16">Pack / ship</text>
+<rect x="770" y="90" width="150" height="50" rx="6" fill="#dbeafe" stroke="#253b53" stroke-width="2"/>
+<text x="845" y="120" text-anchor="middle" font-size="16">Receive order</text>
+<text x="737" y="347" font-size="14" text-anchor="start">Delivery</text>
+</svg>
